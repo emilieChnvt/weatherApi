@@ -8,5 +8,6 @@ fetch(`${url}/weather?lat=45.74&lon=4.85&appid=${apiKey}`)
     .then(response => response.json())
     .then(json => {
         console.log(json.weather[0].main)
+        console.log(Math.round((json.main.temp)-273.15))
         console.log(json)
     });
