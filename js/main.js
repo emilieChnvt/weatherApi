@@ -11,7 +11,13 @@ let cityName = 'lyon'
 fetch(`${url}/weather?q=${cityName}&appid=${apiKey}`)
     .then(response => response.json())
     .then(json => {
-        weatherInfo.innerHTML = json.weather[0].main
-        weatherInfo.innerHTML +=Math.round((json.main.temp)-273.15)
+        let temp =Math.round((json.main.temp)-273.15);
+        let sky = json.weather[0].main
+        weatherInfo.innerHTML = `
+            <p>${sky}</p>
+            <p>${temp}°C</p>
+            
+        `
+
         console.log(json)
     });
