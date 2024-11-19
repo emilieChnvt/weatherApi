@@ -1,10 +1,11 @@
 const apiKey = '7e583338fd9960bbe1d8e817bc0e46e5\n'
 let url='https://api.openweathermap.org/data/2.5';
+let cityName = 'lyon'
 
 
 
 
-fetch(`${url}/weather?lat=45.74&lon=4.85&appid=${apiKey}`)
+fetch(`${url}/weather?q=${cityName}&appid=${apiKey}`)
     .then(response => response.json())
     .then(json => {
         console.log(json.weather[0].main)
