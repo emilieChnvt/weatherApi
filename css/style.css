@@ -3,15 +3,32 @@ html, body {
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    background:linear-gradient(135deg, #74ebd5, #acb6e5);
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding:20px;
+}
 
 .bgWeather{
-    background-color:rgba(255,255,255,0.1);
+    background-color: white;
     padding:20px;
     border-radius:10px;
     text-align:center;
     width:100%;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
 .weatherInfo{
-
+    margin:20px;
+}
+.weatherInfo>h2{
+    font-size:30px;
+    font-weight:normal;
+}
+.weatherInfo>h3{
+    font-size:20px;
+    font-weight:normal;
 }

@@ -14,8 +14,8 @@ fetch(`${url}/weather?q=${cityName}&appid=${apiKey}`)
         let temp =Math.round((json.main.temp)-273.15);
         let sky = json.weather[0].main
         weatherInfo.innerHTML = `
-            <p>${sky}</p>
-            <p>${temp}°C</p>
+            <h2>${sky}</h2>
+            <h3>${temp}°C</h3>
             
         `
 
