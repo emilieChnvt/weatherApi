@@ -4,6 +4,9 @@ let url='https://api.openweathermap.org/data/2.5';
 
 
 
-fetch(`${url}/weather?lat=44.34&lon=10.99&appid=${apiKey}`)
+fetch(`${url}/weather?lat=45.74&lon=4.85&appid=${apiKey}`)
     .then(response => response.json())
-    .then(json => console.log(json));
+    .then(json => {
+        console.log(json.weather[0].main)
+        console.log(json)
+    });
