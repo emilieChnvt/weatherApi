@@ -11,13 +11,28 @@ let cityName = 'lyon'
 fetch(`${url}/weather?q=${cityName}&appid=${apiKey}`)
     .then(response => response.json())
     .then(json => {
+        console.log(json);
         let temp =Math.round((json.main.temp)-273.15);
-        let sky = json.weather[0].main
+        let sky = json.weather[0].main.toLocaleLowerCase()
+
+        switch (sky) {
+            case 'clouds':
+                sky = '☁️'
+                break;
+                case 'rain':
+                    sky ='⛆'
+                    break;
+                    case 'sun':
+                            sky='☀'
+                            break;
+
+        }
         weatherInfo.innerHTML = `
-            <h2>${sky}</h2>
+            <h1>${sky}</h1>
             <h3>${temp}°C</h3>
             
         `
 
-        console.log(json)
+
     });
+
