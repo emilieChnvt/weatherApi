@@ -13,7 +13,8 @@ fetch(`${url}/weather?q=${cityName}&appid=${apiKey}`)
     .then(json => {
         console.log(json);
         let temp =Math.round((json.main.temp)-273.15);
-        let sky = json.weather[0].main.toLocaleLowerCase()
+        let sky = json.weather[0].main.toLocaleLowerCase();
+        let name =  json.name
 
         switch (sky) {
             case 'clouds':
@@ -28,6 +29,7 @@ fetch(`${url}/weather?q=${cityName}&appid=${apiKey}`)
 
         }
         weatherInfo.innerHTML = `
+            <h2>${name}</h2>
             <h1>${sky}</h1>
             <h3>${temp}°C</h3>
             
